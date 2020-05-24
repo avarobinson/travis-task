@@ -5,4 +5,5 @@ cache:
   directori es:
   - node_modules
 script:
+  - // eslint-disable-next-line
   - npm run build
