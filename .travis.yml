@@ -2,10 +2,7 @@ language: node_js
 node_js:
   - "stable"
 cache:
-  directories:
+  directori es:
   - node_modules
 script:
-  - npm test
   - npm run build
-before_install:
-  - cd src
