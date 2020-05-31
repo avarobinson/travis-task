@@ -4,8 +4,8 @@ import { render, findByText } from '@testing-library/react';
 import BackButton from './BackButton';
 
 test('render back button', () => {
-let path = 'home/cs394';
-let setPath = jest.fn();
+  let path = 'home/cs394';
+  let setPath = jest.fn();
   const {getByTestId } = render(<BackButton state={{path, setPath}}/>);
   const backElement = getByTestId("backButton");
   expect(backElement).toBeInTheDocument();
