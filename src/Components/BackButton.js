@@ -17,26 +17,28 @@ const BackButton = ({ state }) => {
 
   const newPath = getNewPath(state.path);
 
-  const [, drop] = useDrop({
-      accept: ItemTypes.BOX,
-      drop: () => ({
-        name: `${newPath}`,
-          newPath,
-      }),
-      collect: monitor => ({
-        isOver: monitor.isOver(),
-        canDrop: monitor.canDrop(),
-      })
-  })
+  // const [, drop] = useDrop({
+  //     accept: ItemTypes.BOX,
+  //     drop: () => ({
+  //       name: `${newPath}`,
+  //         newPath,
+  //     }),
+  //     collect: monitor => ({
+  //       isOver: monitor.isOver(),
+  //       canDrop: monitor.canDrop(),
+  //     })
+  // })
     
   return (
-    <div ref={drop}>
+    <div>
       <Button
         variant = "contained"
         display="inline"
         aria-label="add"
         onClick={ () => state.setPath(getNewPath(state.path))} 
-        disabled = { atHome(state.path) } >
+        disabled = { atHome(state.path) }
+        data-testid = "backButton"
+         >
         <KeyboardBackspaceIcon />
       </Button>
     </div>)
