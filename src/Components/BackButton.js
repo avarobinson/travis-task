@@ -37,8 +37,8 @@ const BackButton = ({ state }) => {
         aria-label="add"
         onClick={ () => state.setPath(getNewPath(state.path))} 
         disabled = { atHome(state.path) }
-        data-testid = "backButton"
-         >
+        data-testid = "backButton">
+        <span data-testid="parentLoc">{state.path.substring(0,state.path.lastIndexOf("/"))}</span>
         <KeyboardBackspaceIcon />
       </Button>
     </div>)
