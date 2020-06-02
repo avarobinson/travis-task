@@ -30,9 +30,10 @@ const uiConfig = {
   
   const SignIn = () => {
     return (
-    <Box textAlign="center" justifyContent="center" height="100px">
+    <Box data-cy="login" textAlign="center" justifyContent="center" height="100px">
     <img src={logo} alt="Logo"/>
     <StyledFirebaseAuth
+      data-cy="login"
       uiConfig={uiConfig}
       firebaseAuth={firebase.auth()}
     />
